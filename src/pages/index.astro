@@ -89,6 +89,8 @@ const projects = [
     ],
   },
 ];
+
+const cvPath = "/cv/lucas-capriata-cv.pdf";
 ---
 
 <!doctype html>
@@ -200,9 +202,22 @@ const projects = [
         </section>
 
         <section class="section" id="cv" aria-labelledby="cv-title">
-          <div class="section-header">
-            <h2 id="cv-title">CV</h2>
-            <p>My professional background, skills, and experience in a shareable format.</p>
+          <div class="cv-panel">
+            <div class="section-header">
+              <h2 id="cv-title">CV</h2>
+              <p>
+                My professional background, skills, and experience in a shareable format
+                for recruiting conversations and technical evaluation.
+              </p>
+            </div>
+            <div class="cv-actions" aria-label="CV actions">
+              <a class="button" href={cvPath} target="_blank" rel="noreferrer">View CV</a>
+              <a class="button secondary" href={cvPath} download>Download CV</a>
+            </div>
+            <p class="cv-note">
+              The CV opens as a PDF and can be shared directly. If it is temporarily unavailable,
+              please use the contact section and I will send it over.
+            </p>
           </div>
         </section>
 

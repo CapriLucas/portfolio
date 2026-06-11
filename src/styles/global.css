@@ -323,6 +323,39 @@ h1 {
   font-weight: 680;
 }
 
+.cv-panel {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) auto;
+  gap: 32px;
+  align-items: center;
+  padding: clamp(24px, 5vw, 42px);
+  border: 1px solid var(--line);
+  border-radius: 8px;
+  background:
+    linear-gradient(135deg, rgba(255, 255, 255, 0.9), rgba(238, 242, 234, 0.78)),
+    var(--surface);
+  box-shadow: 0 14px 46px rgba(22, 36, 33, 0.08);
+}
+
+.cv-panel .section-header {
+  margin-bottom: 0;
+}
+
+.cv-actions {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: flex-end;
+  gap: 12px;
+}
+
+.cv-note {
+  grid-column: 1 / -1;
+  margin: -10px 0 0;
+  color: var(--muted);
+  font-size: 0.94rem;
+  line-height: 1.55;
+}
+
 .footer {
   border-top: 1px solid var(--line);
   color: var(--muted);
@@ -371,6 +404,14 @@ h1 {
 
   .project-card {
     min-height: auto;
+  }
+
+  .cv-panel {
+    grid-template-columns: 1fr;
+  }
+
+  .cv-actions {
+    justify-content: flex-start;
   }
 
   .footer-inner {
