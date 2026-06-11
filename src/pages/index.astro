@@ -25,7 +25,7 @@ const projects = [
   {
     name: "Prode",
     status: "Private repository",
-    publicUrl: "No public URL available",
+    publicUrl: "https://prode.caprilucas.dev/",
     summary:
       "A World Cup 2026 prediction assistant that combines match data, betting odds, probability normalization, and scoring rules to recommend better prode picks.",
     value:
@@ -45,7 +45,7 @@ const projects = [
   {
     name: "AI Digest",
     status: "Private repository",
-    publicUrl: "No public URL available",
+    publicUrl: "https://capri-noticias.vercel.app/",
     summary:
       "A configurable news digest system that fetches sources, deduplicates items, uses AI models to prioritize and summarize, and delivers personalized emails.",
     value:
@@ -91,19 +91,16 @@ const projects = [
 ];
 
 const cvPath = "/cv/lucas-capriata-cv.pdf";
-const contactEmail = "capriatalucas@gmail.com";
-const mailSubject = encodeURIComponent("Job opportunity for Lucas Capriata");
-const mailBody = encodeURIComponent(
-  "Hi Lucas,\n\nI found your portfolio and would like to talk about a professional opportunity.\n\nBest,"
-);
+const hasPublicUrl = (url: string) => url.startsWith("https://") || url.startsWith("http://");
+const contactEmail = "contact@caprilucas.dev";
 
 const operations = [
-  "Hetzner VPS setup and maintenance",
+  "VPS setup and maintenance",
+  "Full stack development (Next.js, React, NestJS)",
+  "Software engineering mindset",
   "Production-minded deployments",
-  "Environment configuration and secrets hygiene",
   "PostgreSQL-backed services and migrations",
-  "Scheduled jobs, GitHub Actions, and operational runbooks",
-  "Backups, monitoring signals, and failure-aware workflows",
+  "Scheduled jobs, GitHub Actions, and operational runbooks"
 ];
 ---
 
@@ -123,6 +120,7 @@ const operations = [
     <meta property="og:description" content={pageDescription} />
     <meta property="og:type" content="website" />
     <meta name="twitter:card" content="summary_large_image" />
+    <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
     <link rel="canonical" href={Astro.site ?? "https://lucascapriata.dev"} />
     <script is:inline type="application/ld+json" set:html={JSON.stringify(structuredData)} />
   </head>
@@ -147,7 +145,7 @@ const operations = [
         <section class="hero" aria-labelledby="hero-title">
           <div>
             <p class="eyebrow">Full stack developer · AI product builder</p>
-            <h1 id="hero-title">Lucas Capriata builds practical AI-assisted products end to end.</h1>
+            <h1 id="hero-title">Lucas Capriata: practical end to end products.</h1>
             <p class="lead">
               I turn product ideas into working software: thoughtful interfaces,
               typed backends, automation workflows, AI integrations, data flows,
@@ -226,7 +224,17 @@ const operations = [
                   <dl class="project-meta">
                     <div>
                       <dt>Public URL</dt>
-                      <dd>{project.publicUrl}</dd>
+                      <dd>
+                        {
+                          hasPublicUrl(project.publicUrl) ? (
+                            <a class="project-url" href={project.publicUrl} target="_blank" rel="noreferrer">
+                              {project.publicUrl.replace(/^https?:\/\//, "").replace(/\/$/, "")}
+                            </a>
+                          ) : (
+                            project.publicUrl
+                          )
+                        }
+                      </dd>
                     </div>
                     <div>
                       <dt>Repository</dt>
@@ -271,7 +279,7 @@ const operations = [
               <p>
                 I care about the path from code to a running product: deployments,
                 configuration, scheduled jobs, data persistence, and maintenance.
-                That includes hands-on work with Hetzner VPS environments and the
+                That includes hands-on work with VPS environments and the
                 practical details around keeping services usable.
               </p>
             </div>
@@ -301,7 +309,7 @@ const operations = [
               <p class="contact-label">Primary channel</p>
               <a
                 class="contact-email"
-                href={`mailto:${contactEmail}?subject=${mailSubject}&body=${mailBody}`}
+                href={`mailto:${contactEmail}`}
               >
                 {contactEmail}
               </a>
@@ -313,7 +321,7 @@ const operations = [
               <div class="contact-actions">
                 <a
                   class="button"
-                  href={`mailto:${contactEmail}?subject=${mailSubject}&body=${mailBody}`}
+                  href={`mailto:${contactEmail}`}
                 >
                   Email Me
                 </a>
@@ -324,6 +332,14 @@ const operations = [
                   rel="noreferrer"
                 >
                   GitHub
+                </a>
+                <a
+                  class="button secondary"
+                  href="https://www.linkedin.com/in/lucas-capriata-1639b4183/"
+                  target="_blank"
+                  rel="noreferrer"
+                >
+                  LinkedIn
                 </a>
               </div>
             </div>

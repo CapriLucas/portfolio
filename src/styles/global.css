@@ -557,6 +557,17 @@ h1 {
   font-weight: 700;
 }
 
+.project-url {
+  color: var(--accent-strong);
+  text-decoration-color: rgba(0, 95, 115, 0.35);
+  text-underline-offset: 3px;
+}
+
+.project-url:hover {
+  color: var(--accent);
+  text-decoration-color: currentColor;
+}
+
 .tech-list {
   display: flex;
   flex-wrap: wrap;
