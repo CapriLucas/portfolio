@@ -1,0 +1,25 @@
+{
+  "name": "portfolio",
+  "version": "1.0.0",
+  "type": "module",
+  "scripts": {
+    "dev": "astro dev",
+    "build": "astro build",
+    "lint": "astro check",
+    "preview": "astro preview"
+  },
+  "keywords": [
+    "portfolio",
+    "full-stack",
+    "ai",
+    "developer"
+  ],
+  "author": "Lucas Capriata",
+  "license": "UNLICENSED",
+  "description": "Professional portfolio for Lucas Capriata, full stack developer with practical AI experience.",
+  "dependencies": {
+    "@astrojs/check": "^0.9.9",
+    "astro": "^5.18.2",
+    "typescript": "^5.9.3"
+  }
+}

@@ -1,0 +1,139 @@
+---
+import "../styles/global.css";
+
+const pageTitle =
+  "Lucas Capriata - Full Stack Developer with Practical AI Experience";
+const pageDescription =
+  "Portfolio of Lucas Capriata, a full stack developer building AI-assisted products, automation workflows, and end-to-end web applications.";
+
+const structuredData = {
+  "@context": "https://schema.org",
+  "@type": "Person",
+  name: "Lucas Capriata",
+  jobTitle: "Full Stack Developer",
+  description: pageDescription,
+  knowsAbout: [
+    "Full stack development",
+    "Artificial intelligence",
+    "Product engineering",
+    "Automation",
+    "VPS operations",
+  ],
+};
+---
+
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>{pageTitle}</title>
+    <meta name="description" content={pageDescription} />
+    <meta
+      name="keywords"
+      content="Lucas Capriata, full stack developer, AI developer, product engineer, automation, portfolio"
+    />
+    <meta name="robots" content="index, follow" />
+    <meta property="og:title" content={pageTitle} />
+    <meta property="og:description" content={pageDescription} />
+    <meta property="og:type" content="website" />
+    <meta name="twitter:card" content="summary_large_image" />
+    <link rel="canonical" href={Astro.site ?? "https://lucascapriata.dev"} />
+    <script is:inline type="application/ld+json" set:html={JSON.stringify(structuredData)} />
+  </head>
+  <body>
+    <div class="site-shell">
+      <header class="topbar">
+        <nav class="nav" aria-label="Primary navigation">
+          <a class="brand" href="/" aria-label="Lucas Capriata portfolio home">
+            <span class="brand-mark" aria-hidden="true">LC</span>
+            <span>Lucas Capriata</span>
+          </a>
+          <div class="nav-links">
+            <a href="#projects">Projects</a>
+            <a href="#cv">CV</a>
+            <a href="#operations">Operations</a>
+            <a href="#contact">Contact</a>
+          </div>
+        </nav>
+      </header>
+
+      <main>
+        <section class="hero" aria-labelledby="hero-title">
+          <div>
+            <p class="eyebrow">Full stack developer · AI product builder</p>
+            <h1 id="hero-title">Lucas Capriata builds practical AI-assisted products end to end.</h1>
+            <p class="lead">
+              I turn product ideas into working software: thoughtful interfaces,
+              typed backends, automation workflows, AI integrations, data flows,
+              deployment paths, and the operational details needed to keep them useful.
+            </p>
+            <div class="hero-actions" aria-label="Primary actions">
+              <a class="button" href="#projects">View Projects</a>
+              <a class="button secondary" href="#cv">View CV</a>
+              <a class="button secondary" href="#contact">Contact Me</a>
+            </div>
+            <div class="proof-strip" aria-label="Professional focus areas">
+              <div class="proof-item">
+                <strong>AI in real workflows</strong>
+                <span>Summaries, prioritization, recommendations, and automation where they improve the product.</span>
+              </div>
+              <div class="proof-item">
+                <strong>Full stack ownership</strong>
+                <span>Frontend, backend, data modeling, integrations, and release-ready product thinking.</span>
+              </div>
+              <div class="proof-item">
+                <strong>Deployment mindset</strong>
+                <span>From local prototypes to hosted services, cron jobs, VPS work, and production constraints.</span>
+              </div>
+            </div>
+          </div>
+          <div class="hero-visual" aria-label="Abstract product system visual"></div>
+        </section>
+
+        <section class="section" id="projects" aria-labelledby="projects-title">
+          <div class="section-header">
+            <h2 id="projects-title">Selected projects</h2>
+            <p>
+              A focused set of projects that show how I approach product engineering,
+              AI-assisted workflows, automation, and operational ownership.
+            </p>
+          </div>
+        </section>
+
+        <section class="section" id="cv" aria-labelledby="cv-title">
+          <div class="section-header">
+            <h2 id="cv-title">CV</h2>
+            <p>My professional background, skills, and experience in a shareable format.</p>
+          </div>
+        </section>
+
+        <section class="section" id="operations" aria-labelledby="operations-title">
+          <div class="section-header">
+            <h2 id="operations-title">Operational experience</h2>
+            <p>
+              I care about the path from code to a running product: deployments,
+              configuration, scheduled jobs, data persistence, and maintenance.
+            </p>
+          </div>
+        </section>
+
+        <section class="section" id="contact" aria-labelledby="contact-title">
+          <div class="section-header">
+            <h2 id="contact-title">Contact</h2>
+            <p>
+              Open to full stack, AI product engineering, and automation-focused opportunities.
+            </p>
+          </div>
+        </section>
+      </main>
+
+      <footer class="footer">
+        <div class="footer-inner">
+          <span>© {new Date().getFullYear()} Lucas Capriata</span>
+          <span>Full stack development · AI · product automation</span>
+        </div>
+      </footer>
+    </div>
+  </body>
+</html>
