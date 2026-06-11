@@ -91,6 +91,11 @@ const projects = [
 ];
 
 const cvPath = "/cv/lucas-capriata-cv.pdf";
+const contactEmail = "capriatalucas@gmail.com";
+const mailSubject = encodeURIComponent("Job opportunity for Lucas Capriata");
+const mailBody = encodeURIComponent(
+  "Hi Lucas,\n\nI found your portfolio and would like to talk about a professional opportunity.\n\nBest,"
+);
 ---
 
 <!doctype html>
@@ -232,11 +237,44 @@ const cvPath = "/cv/lucas-capriata-cv.pdf";
         </section>
 
         <section class="section" id="contact" aria-labelledby="contact-title">
-          <div class="section-header">
-            <h2 id="contact-title">Contact</h2>
-            <p>
-              Open to full stack, AI product engineering, and automation-focused opportunities.
-            </p>
+          <div class="contact-layout">
+            <div class="section-header">
+              <h2 id="contact-title">Contact</h2>
+              <p>
+                Open to full stack, AI product engineering, and automation-focused
+                opportunities where practical product delivery matters.
+              </p>
+            </div>
+            <div class="contact-panel">
+              <p class="contact-label">Primary channel</p>
+              <a
+                class="contact-email"
+                href={`mailto:${contactEmail}?subject=${mailSubject}&body=${mailBody}`}
+              >
+                {contactEmail}
+              </a>
+              <p class="contact-copy">
+                Send a role description, project context, or a quick note about what
+                you are building. I am especially interested in work that combines
+                product engineering, AI workflows, and end-to-end ownership.
+              </p>
+              <div class="contact-actions">
+                <a
+                  class="button"
+                  href={`mailto:${contactEmail}?subject=${mailSubject}&body=${mailBody}`}
+                >
+                  Email Me
+                </a>
+                <a
+                  class="button secondary"
+                  href="https://github.com/CapriLucas"
+                  target="_blank"
+                  rel="noreferrer"
+                >
+                  GitHub
+                </a>
+              </div>
+            </div>
           </div>
         </section>
       </main>

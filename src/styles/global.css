@@ -356,6 +356,67 @@ h1 {
   line-height: 1.55;
 }
 
+.contact-layout {
+  display: grid;
+  grid-template-columns: minmax(0, 0.9fr) minmax(320px, 0.7fr);
+  gap: clamp(24px, 5vw, 64px);
+  align-items: start;
+}
+
+.contact-panel {
+  padding: clamp(22px, 4vw, 34px);
+  border: 1px solid var(--line);
+  border-radius: 8px;
+  background: var(--ink);
+  color: white;
+  box-shadow: var(--shadow);
+}
+
+.contact-label {
+  margin: 0 0 10px;
+  color: rgba(255, 255, 255, 0.68);
+  font-size: 0.8rem;
+  font-weight: 800;
+  text-transform: uppercase;
+}
+
+.contact-email {
+  display: inline-block;
+  overflow-wrap: anywhere;
+  color: #ffffff;
+  font-size: clamp(1.34rem, 3vw, 2rem);
+  font-weight: 820;
+  text-decoration: none;
+}
+
+.contact-email:hover {
+  text-decoration: underline;
+}
+
+.contact-copy {
+  margin: 20px 0 0;
+  color: rgba(255, 255, 255, 0.76);
+  line-height: 1.65;
+}
+
+.contact-actions {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 12px;
+  margin-top: 24px;
+}
+
+.contact-actions .button {
+  background: white;
+  color: var(--ink);
+}
+
+.contact-actions .button.secondary {
+  border-color: rgba(255, 255, 255, 0.18);
+  background: rgba(255, 255, 255, 0.1);
+  color: white;
+}
+
 .footer {
   border-top: 1px solid var(--line);
   color: var(--muted);
@@ -412,6 +473,10 @@ h1 {
 
   .cv-actions {
     justify-content: flex-start;
+  }
+
+  .contact-layout {
+    grid-template-columns: 1fr;
   }
 
   .footer-inner {
