@@ -20,6 +20,75 @@ const structuredData = {
     "VPS operations",
   ],
 };
+
+const projects = [
+  {
+    name: "Prode",
+    status: "Private repository",
+    publicUrl: "No public URL available",
+    summary:
+      "A World Cup 2026 prediction assistant that combines match data, betting odds, probability normalization, and scoring rules to recommend better prode picks.",
+    value:
+      "Shows product thinking around uncertain data, domain logic, typed APIs, persistence, and recommendation flows.",
+    technologies: [
+      "TypeScript",
+      "Next.js",
+      "React",
+      "Tailwind CSS",
+      "PostgreSQL",
+      "Drizzle ORM",
+      "Odds API",
+      "Docker",
+      "pnpm",
+    ],
+  },
+  {
+    name: "AI Digest",
+    status: "Private repository",
+    publicUrl: "No public URL available",
+    summary:
+      "A configurable news digest system that fetches sources, deduplicates items, uses AI models to prioritize and summarize, and delivers personalized emails.",
+    value:
+      "Demonstrates practical AI orchestration, model adapters, scheduled automation, source ingestion, and email delivery.",
+    technologies: [
+      "TypeScript",
+      "Node.js",
+      "RSS",
+      "Scraping",
+      "OpenAI",
+      "Anthropic",
+      "DeepSeek",
+      "Resend",
+      "Supabase",
+      "GitHub Actions",
+    ],
+  },
+  {
+    name: "Gerardo",
+    status: "Private repository",
+    publicUrl: "No public URL available",
+    summary:
+      "A personal finance automation platform with a DCA bot, web dashboard, broker integrations, reconciliation flows, alerts, and scheduled operational jobs.",
+    value:
+      "Highlights full stack ownership across product UI, domain modeling, background workflows, integrations, observability, and release operations.",
+    technologies: [
+      "TypeScript",
+      "Node.js",
+      "pnpm workspaces",
+      "Turborepo",
+      "Next.js",
+      "Tailwind CSS",
+      "shadcn/ui",
+      "Supabase Postgres",
+      "Drizzle ORM",
+      "GitHub Actions",
+      "Resend",
+      "React Email",
+      "Vercel",
+      "IOL integration",
+    ],
+  },
+];
 ---
 
 <!doctype html>
@@ -98,6 +167,35 @@ const structuredData = {
               A focused set of projects that show how I approach product engineering,
               AI-assisted workflows, automation, and operational ownership.
             </p>
+          </div>
+          <div class="project-grid">
+            {
+              projects.map((project) => (
+                <article class="project-card">
+                  <div class="project-card-top">
+                    <h3>{project.name}</h3>
+                    <span>{project.status}</span>
+                  </div>
+                  <p class="project-summary">{project.summary}</p>
+                  <p class="project-value">{project.value}</p>
+                  <dl class="project-meta">
+                    <div>
+                      <dt>Public URL</dt>
+                      <dd>{project.publicUrl}</dd>
+                    </div>
+                    <div>
+                      <dt>Repository</dt>
+                      <dd>{project.status}</dd>
+                    </div>
+                  </dl>
+                  <ul class="tech-list" aria-label={`${project.name} technologies`}>
+                    {project.technologies.map((technology) => (
+                      <li>{technology}</li>
+                    ))}
+                  </ul>
+                </article>
+              ))
+            }
           </div>
         </section>
 
