@@ -670,6 +670,53 @@ h1 {
   color: white;
 }
 
+.operations-layout {
+  display: grid;
+  grid-template-columns: minmax(0, 0.84fr) minmax(320px, 0.9fr);
+  gap: clamp(24px, 5vw, 64px);
+  align-items: start;
+}
+
+.ops-board {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 12px;
+}
+
+.ops-item {
+  display: grid;
+  grid-template-columns: 16px minmax(0, 1fr);
+  gap: 12px;
+  align-items: start;
+  min-height: 100px;
+  padding: 18px;
+  border: 1px solid var(--line);
+  border-radius: 8px;
+  background: rgba(255, 255, 255, 0.78);
+}
+
+.ops-item span {
+  display: block;
+  width: 12px;
+  height: 12px;
+  margin-top: 4px;
+  border-radius: 50%;
+  background: var(--accent);
+  box-shadow: 0 0 0 5px rgba(11, 122, 117, 0.12);
+}
+
+.ops-item:nth-child(3n) span {
+  background: var(--signal);
+  box-shadow: 0 0 0 5px rgba(217, 70, 53, 0.12);
+}
+
+.ops-item p {
+  margin: 0;
+  color: #2e3b38;
+  font-weight: 720;
+  line-height: 1.45;
+}
+
 .footer {
   border-top: 1px solid var(--line);
   color: var(--muted);
@@ -738,6 +785,11 @@ h1 {
   }
 
   .contact-layout {
+    grid-template-columns: 1fr;
+  }
+
+  .operations-layout,
+  .ops-board {
     grid-template-columns: 1fr;
   }
 

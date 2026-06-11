@@ -96,6 +96,15 @@ const mailSubject = encodeURIComponent("Job opportunity for Lucas Capriata");
 const mailBody = encodeURIComponent(
   "Hi Lucas,\n\nI found your portfolio and would like to talk about a professional opportunity.\n\nBest,"
 );
+
+const operations = [
+  "Hetzner VPS setup and maintenance",
+  "Production-minded deployments",
+  "Environment configuration and secrets hygiene",
+  "PostgreSQL-backed services and migrations",
+  "Scheduled jobs, GitHub Actions, and operational runbooks",
+  "Backups, monitoring signals, and failure-aware workflows",
+];
 ---
 
 <!doctype html>
@@ -256,12 +265,26 @@ const mailBody = encodeURIComponent(
         </section>
 
         <section class="section" id="operations" aria-labelledby="operations-title">
-          <div class="section-header">
-            <h2 id="operations-title">Operational experience</h2>
-            <p>
-              I care about the path from code to a running product: deployments,
-              configuration, scheduled jobs, data persistence, and maintenance.
-            </p>
+          <div class="operations-layout">
+            <div class="section-header">
+              <h2 id="operations-title">Operational experience</h2>
+              <p>
+                I care about the path from code to a running product: deployments,
+                configuration, scheduled jobs, data persistence, and maintenance.
+                That includes hands-on work with Hetzner VPS environments and the
+                practical details around keeping services usable.
+              </p>
+            </div>
+            <div class="ops-board" aria-label="Operational capabilities">
+              {
+                operations.map((item) => (
+                  <div class="ops-item">
+                    <span aria-hidden="true"></span>
+                    <p>{item}</p>
+                  </div>
+                ))
+              }
+            </div>
           </div>
         </section>
 
