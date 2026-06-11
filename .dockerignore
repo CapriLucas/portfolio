@@ -1,0 +1,10 @@
+.astro
+.claude
+.git
+.DS_Store
+dist
+node_modules
+npm-debug.log*
+.env
+.env.*
+LucasCapriata_cv_back (1).pdf
